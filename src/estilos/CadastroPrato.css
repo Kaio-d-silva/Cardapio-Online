@@ -1,4 +1,4 @@
-.Main-Cadatro{
+.Main-Cadastro{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,6 +19,16 @@
     border: 1px solid black;
     border-radius: 10px;
     flex-direction: column;
+}
+
+.Container-cadastro h1{
+    text-align: center;
+}
+
+.Botao-voltar{
+
+ width: 200px;
+ height:30px ;
 }
 
 .Container-inputs{

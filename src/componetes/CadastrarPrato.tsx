@@ -1,17 +1,12 @@
 import "../estilos/CadastroPrato.css"
-import logo from "../assets/banner.jpg"
 
 const CadastrarPrato = () => {
     return(
         <>
-        <main className="Main-Cadatro">
+        <main className="Main-Cadastro">
             <div className="Container-cadastro">
-                <div className="Botao-voltar">
-                    <button>Voltar</button>
-                </div>
-                <div className="imagem-prato">
-                    <img src={logo} alt="Imagem prato" />
-                </div>
+                
+                    <h1>Cadastro de prato</h1>
                 <div className="Container-inputs">
                     <div className="Inputs">
                         <label htmlFor="nome">Nome</label>
