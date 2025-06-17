@@ -40,6 +40,7 @@
   padding: 16px;
   text-align: left;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1;
 }
 
 .prato-card:hover {
@@ -65,4 +66,58 @@
   .prato-card {
     width: 100%; /* 1 card por linha em telas menores */
   }
+}
+
+.menu-opcoes {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+  margin-bottom: 2px;
+}
+
+
+.menu-opcoes .opcao {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+
+}
+
+.menu-opcoes .opcao:not(:last-child) {
+  border-bottom: 1px solid #ccc; /* Linha entre os itens */
+}
+
+.menu-opcoes .opcao:hover {
+  background-color: #f0f0f0;
+}
+
+.botao-opcoes{
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: end;
+}
+
+.botao-opcoes button{
+  border: none;
+  background-color: #fff;
+  /* font-size: 50px; */
+}
+.container-menu-opcoes{
+  display: none;
+  flex-direction: column;
+}
+
+.botao-opcoes:hover .container-menu-opcoes{
+  display: block;
+  z-index: 3;  
 }
