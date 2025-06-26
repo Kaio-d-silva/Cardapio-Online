@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from "./componetes/Home";
+import Home from "./pages/Home";
 import DetalhesPrato from "./componetes/DetalhesPrato";
 import CadastrarPrato from "./componetes/CadastrarPrato";
 
