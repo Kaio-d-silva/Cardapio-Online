@@ -1,0 +1,16 @@
+.main-home {
+    background-color: rgb(236, 236, 236);
+    height: 100vh;
+}
+
+.container-cards{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.card-prato{
+    border: 1px solid black;
+    width: 30%;
+    height: 35vh;
+}
