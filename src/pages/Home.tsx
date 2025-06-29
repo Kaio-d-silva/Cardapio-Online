@@ -7,31 +7,32 @@ const image = "./terra_das_aguas.jpg"
 
 const Home = () => {
 
-    useEffect(() => {
-        async function fetchData() {
-            try{
-            const response =  await api.get("/pratos")
-            const {data} = response
-            console.log(data.error)
-            setPratos(data)
-            } catch (error){
-            console.log(error)
-        }
-        }
-
-        fetchData()
-
-    },[])
-
-
     const [pratos, setPratos] = useState([
         {
+            id: 0,
             nome : "",
             cozinha : "",
             descricao_resumida : "",
             valor : 0,
         },
     ],)
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await api.get("/pratos")
+                const { data } = response
+                setPratos(data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        fetchData()
+    }, [pratos])
+
+
+    
 
     return (
         <>
@@ -43,6 +44,7 @@ const Home = () => {
                 <div className="container-cards">
                     {pratos.map((prato, index) => (
                         <CardPratoComponent
+                        id = {prato.id}
                         nome={prato.nome}
                         cozinha={prato.cozinha}
                         descricao_resumida={prato.descricao_resumida}
