@@ -1,19 +1,21 @@
+
 interface CardPratoProps {
-    imagem: string,
     nome: string,
     cozinha: string,
-    descricao: string,
+    descricao_resumida: string,
+    valor: number,
 
 }
 
 
-const CardPratoComponent = ({ imagem, nome, cozinha, descricao }: CardPratoProps) => {
+const CardPratoComponent = ({ nome, cozinha, descricao_resumida, valor }: CardPratoProps) => {
     return (
         <div className="card-prato">
-            <img className="image-card" src={imagem} alt="" />
+            <img className="image-card" src={""} alt="" />
             <h2>{nome}</h2>
             <p>{cozinha}</p>
-            <p>{descricao}</p>
+            <p>{descricao_resumida}</p>
+            <p>R$ {valor}</p>
         </div>
     )
 }

@@ -1,18 +1,35 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../assets/styles/home.css"
 import CardPratoComponent from "../components/CardPrato"
+import api from "../http/api"
 const image = "./terra_das_aguas.jpg"
 
 
 const Home = () => {
 
+    useEffect(() => {
+        async function fetchData() {
+            try{
+            const response =  await api.get("/pratos")
+            const {data} = response
+            console.log(data.error)
+            setPratos(data)
+            } catch (error){
+            console.log(error)
+        }
+        }
+
+        fetchData()
+
+    },[])
+
+
     const [pratos, setPratos] = useState([
         {
-            nome : "teste",
-            cozinha : "feijoada",
-            imagem : "https://media.istockphoto.com/id/1428412216/pt/foto/a-male-chef-pouring-sauce-on-meal.jpg?s=612x612&w=is&k=20&c=gYiHyXqpjiDx9Qyb80GRyfyDNPQMRx8Mv544rwoz8Zw=",
-            descricao :"comida teste",
-
+            nome : "",
+            cozinha : "",
+            descricao_resumida : "",
+            valor : 0,
         },
     ],)
 
@@ -28,8 +45,8 @@ const Home = () => {
                         <CardPratoComponent
                         nome={prato.nome}
                         cozinha={prato.cozinha}
-                        descricao={prato.descricao}
-                        imagem={prato.imagem}
+                        descricao_resumida={prato.descricao_resumida}
+                        valor={prato.valor}
                         />
                     ))
                     
