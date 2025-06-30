@@ -1,6 +1,7 @@
 import { useState } from "react"
 import "../assets/styles/card-prato.css"
 import api from "../http/api"
+import { useNavigate } from "react-router-dom"
 
 
 interface CardPratoProps {
@@ -12,16 +13,33 @@ interface CardPratoProps {
 
 }
 
-async function deletarPrato(id: number) {
-  try {
-    console.log(id)
-    await api.delete(`/pratos/${id}`)
-  } catch (error) {
-    console.error("Erro ao deletar prato:", error)
-  }
-}
 
-const CardPratoComponent = ({ id ,nome, cozinha, descricao_resumida, valor }: CardPratoProps) => {
+
+const CardPratoComponent = ({ id, nome, cozinha, descricao_resumida, valor }: CardPratoProps) => {
+  async function deletarPrato(id: number) {
+    try {
+      console.log(id)
+      await api.delete(`/pratos/${id}`)
+    } catch (error) {
+      console.error("Erro ao deletar prato:", error)
+    }
+  }
+
+  const navigate = useNavigate()
+
+  function editarPrato(id: number) {
+    navigate(`/editar-prato/${id}`)
+
+  }
+  function verDetalhes(id: number) {
+    navigate(`/detalhes-prato/${id}`)
+
+  }
+
+
+
+
+
   return (
     <div className="card-prato">
       <div className="menu-container">
@@ -29,16 +47,12 @@ const CardPratoComponent = ({ id ,nome, cozinha, descricao_resumida, valor }: Ca
           &#x22EE;
         </button>
         <div className="dropdown-menu">
-          <a href="#" className="dropdown-item">
-            Editar
-          </a>
-          <a href="#" className="dropdown-item">
-          <button className="dropdown-item" onClick={() => deletarPrato(id)}>Deletar</button>
+            <button className="dropdown-item" onClick={() => editarPrato(id)}>Editar</button>
             
-          </a>
-          <a href="#" className="dropdown-item">
-            Ver Detalhes
-          </a>
+            <button className="dropdown-item" onClick={() => deletarPrato(id)}>Deletar</button>
+            
+            <button className="dropdown-item" onClick={() => verDetalhes(id)}>Ver Detalhes</button>
+          
         </div>
       </div>
       <img className="image-card" src={""} alt="" />
