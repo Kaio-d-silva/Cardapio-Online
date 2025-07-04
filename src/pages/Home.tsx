@@ -14,6 +14,7 @@ const Home = () => {
             cozinha : "",
             descricao_resumida : "",
             valor : 0,
+            imagem : ""
         },
     ],)
 
@@ -38,7 +39,7 @@ const Home = () => {
         <>
             <main className="main-home">
                 <div className="banner">
-                    <img  src={image} alt="sem imagem" />
+                    {/* <img  src={image} alt="sem imagem" /> */}
                 </div>
                 <h1 className="titulo">Bem vindo ao Restaurante Terra das Aguas SENAC - MS</h1>
                 <div className="container-cards">
@@ -49,6 +50,7 @@ const Home = () => {
                         cozinha={prato.cozinha}
                         descricao_resumida={prato.descricao_resumida}
                         valor={prato.valor}
+                        imagem={prato.imagem}
                         />
                     ))
                     

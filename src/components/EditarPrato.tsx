@@ -9,7 +9,7 @@ const EditarPrato = () => {
     const [cozinha, setCozinha] = useState("")
     const [descricaoResumida, setDescricaoResumida] = useState("")
     const [descricaoDetalhada, setDescricaoDetalhada] = useState("")
-    const [valor, setValor] = useState(0)
+    const [valor, setValor] = useState("")
 
     useEffect(() => {
         async function fetchData(id: string | undefined) {
@@ -19,7 +19,7 @@ const EditarPrato = () => {
                 // setPratos(data)
                 setNome(data.nome)
                 setCozinha(data.cozinha)
-                setDescricaoResumida(data.descricao)
+                setDescricaoResumida(data.descricao_resumida)
                 setDescricaoDetalhada(data.descricao_detalhada)
                 setValor(data.valor)
 
@@ -40,6 +40,7 @@ const EditarPrato = () => {
                 cozinha: cozinha,
                 descricao_resumida: descricaoResumida,
                 descricao_detalhada: descricaoDetalhada,
+                valor: Number(valor)
 
             }
         )
@@ -102,7 +103,7 @@ const EditarPrato = () => {
                         id="valor"
                          placeholder= "R$ 50.00"
                          value={valor}
-                         onChange={(e) => setValor(Number(e.target.value))}/>
+                         onChange={(e) => setValor(e.target.value)}/>
                     </div>
                 </div>
                     <div className="Layout-botao">
@@ -113,7 +114,7 @@ const EditarPrato = () => {
                             editarPrato(Number(id));
                         }
                     }}
-                    >Cadastrar</button>
+                    >Editar</button>
 
                     <button className="Button-cadastro"
                     onClick={voltar}

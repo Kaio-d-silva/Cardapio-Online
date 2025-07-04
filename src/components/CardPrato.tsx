@@ -1,4 +1,3 @@
-import { useState } from "react"
 import "../assets/styles/card-prato.css"
 import api from "../http/api"
 import { useNavigate } from "react-router-dom"
@@ -10,12 +9,13 @@ interface CardPratoProps {
   cozinha: string,
   descricao_resumida: string,
   valor: number,
+  imagem: string
 
 }
 
 
 
-const CardPratoComponent = ({ id, nome, cozinha, descricao_resumida, valor }: CardPratoProps) => {
+const CardPratoComponent = ({ id, nome, cozinha, descricao_resumida, valor, imagem }: CardPratoProps) => {
   async function deletarPrato(id: number) {
     try {
       console.log(id)
@@ -44,7 +44,7 @@ const CardPratoComponent = ({ id, nome, cozinha, descricao_resumida, valor }: Ca
     <div className="card-prato">
       <div className="menu-container">
         <button className="menu-button" onClick={() => { }}>
-          &#x22EE;
+          	&#8230;
         </button>
         <div className="dropdown-menu">
             <button className="dropdown-item" onClick={() => editarPrato(id)}>Editar</button>
@@ -55,7 +55,7 @@ const CardPratoComponent = ({ id, nome, cozinha, descricao_resumida, valor }: Ca
           
         </div>
       </div>
-      <img className="image-card" src={""} alt="" />
+      <img className="image-card" src={imagem} alt="" />
       <h2>{nome}</h2>
       <p>{cozinha}</p>
       <p>{descricao_resumida}</p>
