@@ -4,14 +4,14 @@
     min-height: 100vh;
 }
 
-.main-home h1{
+.main-home h1 {
     text-align: center;
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
 }
 
-.banner{
+.banner {
     background-image: url('../terra_das_aguas.jpg');
     background-size: contain;
     background-position: center;
@@ -24,12 +24,35 @@
     margin-bottom: 20px;
 }
 
+.novo-prato {
+    display: flex;
+    justify-content: center;
+}
 
-.container-cards{
+
+.botao-novo-prato {
+    width: 15%;
+    min-height: 50px;
+    border-radius: 15px;
+    border: none;
+    font-size: 19px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    color: #494949;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.botao-novo-prato:hover {
+    background-color: #b5faa3;
+    color: #003014;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container-cards {
     display: flex;
     flex-wrap: wrap;
     /* gap: 50px; */
     justify-content: center;
     /* justify-content: space-evenly; */
 }
-

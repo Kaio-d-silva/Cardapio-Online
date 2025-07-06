@@ -5,8 +5,10 @@
     height: 100vh;
     background-color: rgb(247, 247, 247);
     background-image: url("../terra_das_aguas.jpg");
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    background-position: left;
+    background-color: #343434;
 }
 
 .Container-cadastro{
@@ -19,6 +21,7 @@
     border: 1px solid black;
     border-radius: 10px;
     flex-direction: column;
+    /* background-color: #bbbbbb; */
 }
 
 .Container-cadastro h1{
@@ -26,7 +29,6 @@
 }
 
 .Botao-voltar{
-
  width: 200px;
  height:30px ;
 }
@@ -34,7 +36,7 @@
 .Container-inputs{
     display: flex;
     justify-content: center;
-    
+    /* background-color: #bbbbbb; */
 }
 
 .Inputs{
@@ -47,17 +49,23 @@
 
 .Inputs input{
     width: 100%;
-    height: 2em;
+    height: 30px;
     margin-bottom: 10px;
     padding: 5px;
     border-radius: 8px;
     border: 1px solid #ccc;
+    color: #1f1f1f;
+    background-color: #eeeded;
+    font-size: 16px;
 }
 
 .Layout-botao{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    height: 2em;
 }
+
 
 .imagem-prato{
     display: flex;
@@ -68,9 +76,21 @@
     border-radius: 8px;
 }
 
-.Layout-botao{
-    margin-top: 10px;
-    height: 2em;
+.button-voltar{
+    margin-left: 10px;
+}
+
+.button-voltar button{
+    background-color: #f3f7fe;    
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px; 
+    margin-left: 10px;
+    background-image: url("../voltar.png");
+    background-size: contain;
 }
 
 .Button-cadastro{

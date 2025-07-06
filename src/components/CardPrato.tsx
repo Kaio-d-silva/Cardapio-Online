@@ -28,7 +28,7 @@ const CardPratoComponent = ({ id, nome, cozinha, descricao_resumida, valor, imag
   const navigate = useNavigate()
 
   function editarPrato(id: number) {
-    navigate(`/editar-prato/${id}`)
+    navigate(`/formulario-prato/${id}`)
 
   }
   function verDetalhes(id: number) {

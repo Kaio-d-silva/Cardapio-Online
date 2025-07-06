@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import "../assets/styles/home.css"
 import CardPratoComponent from "../components/CardPrato"
 import api from "../http/api"
+import { useNavigate } from "react-router-dom"
 const image = "./terra_das_aguas.jpg"
 
 
@@ -32,8 +33,9 @@ const Home = () => {
         fetchData()
     }, [pratos])
 
-
     
+    const navigate = useNavigate()
+    const ROTA_CADASTRAR_PRATO = "/formulario-prato"
 
     return (
         <>
@@ -42,6 +44,12 @@ const Home = () => {
                     {/* <img  src={image} alt="sem imagem" /> */}
                 </div>
                 <h1 className="titulo">Bem vindo ao Restaurante Terra das Aguas SENAC - MS</h1>
+                <div className="novo-prato">
+                    <button className="botao-novo-prato"
+                    onClick={() => {
+                        navigate(ROTA_CADASTRAR_PRATO)
+                    }}> + NOVO PRATO</button>
+                </div>
                 <div className="container-cards">
                     {pratos.map((prato, index) => (
                         <CardPratoComponent

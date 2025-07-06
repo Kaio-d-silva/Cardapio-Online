@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import "../assets/styles/cadastro-prato.css"
+// import "../assets/styles/cadastro-prato.css"
 import api from "../http/api"
 import { useNavigate, useParams } from "react-router-dom"
 

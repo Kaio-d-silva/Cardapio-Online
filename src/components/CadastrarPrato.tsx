@@ -1,5 +1,5 @@
 import { useState } from "react"
-import "../assets/styles/cadastro-prato.css"
+// import "../assets/styles/cadastro-prato.css"
 import api from "../http/api"
 
 const CadastrarPrato = () => {
