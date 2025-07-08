@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     width: 400px;
-    height: 600px;
+    height: 650px;
     border: 1px solid black;
     border-radius: 10px;
     flex-direction: column;
@@ -50,13 +50,27 @@
 .Inputs input{
     width: 100%;
     height: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 5%;
     padding: 5px;
     border-radius: 8px;
     border: 1px solid #ccc;
     color: #1f1f1f;
-    background-color: #eeeded;
+    /* background-color: #eeeded; */
     font-size: 16px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.Inputs input:focus {
+    outline: none;
+    border: 1px solid #666666;
+    
+}
+
+.Inputs label{
+    font-size: 17px;
+    font-weight: bold;
+    color: #747474;
+
 }
 
 .Layout-botao{
@@ -102,6 +116,8 @@
     width: 100px;
     height: 45px;
     transition: 0.3s; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    font-size: 16px;
 }
 
 .Button-cadastro:hover{

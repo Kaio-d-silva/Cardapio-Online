@@ -22,8 +22,8 @@ const FormularioPrato = ({ isEditing = false }) => {
 
                 setNome(data.nome)
                 setCozinha(data.cozinha)
-                setDescricaoResumida(data.descricaoResumida)
-                setDescricaoDetalhada(data.descricaoDetalhada)
+                setDescricaoResumida(data.descricao_resumida)
+                setDescricaoDetalhada(data.descricao_detalhada)
                 setValor(data.valor)
 
             }
@@ -102,7 +102,11 @@ const FormularioPrato = ({ isEditing = false }) => {
                                 id="nome"
                                 placeholder="Ex: Feijoada"
                                 value={nome}
-                                onChange={(e) => setNome(e.target.value)} />
+                                onChange={(e) => setNome(e.target.value)}
+                                style={{
+                                    backgroundColor: nome?.length < 1 ? "#eeeded" : "#ffff" 
+                                }}
+                                />
 
                             <label htmlFor="cozinha">Cozinha</label>
                             <input
@@ -110,7 +114,11 @@ const FormularioPrato = ({ isEditing = false }) => {
                                 id="cozinha"
                                 placeholder="Ex: Brasileira"
                                 value={cozinha}
-                                onChange={(e) => setCozinha(e.target.value)} />
+                                onChange={(e) => setCozinha(e.target.value)} 
+                                style={{
+                                    backgroundColor: cozinha?.length < 1 ? "#eeeded" : "#ffff" 
+                                }}
+                                />
 
                             <label htmlFor="descricao-resumida">Descrição Resumida</label>
                             <input
@@ -118,7 +126,11 @@ const FormularioPrato = ({ isEditing = false }) => {
                                 id="descricao-resumida"
                                 placeholder="Ex: Prato típico brasileiro"
                                 value={descricaoResumida}
-                                onChange={(e) => setDescricaoResumida(e.target.value)} />
+                                onChange={(e) => setDescricaoResumida(e.target.value)} 
+                                style={{
+                                    backgroundColor: descricaoResumida?.length < 1 ? "#eeeded" : "#ffff"
+                                }}
+                                />
 
                             <label htmlFor="descricao-detalhada">Descrição Detalhada</label>
                             <input
@@ -126,14 +138,22 @@ const FormularioPrato = ({ isEditing = false }) => {
                                 id="descricao-detalhada"
                                 placeholder="Ex: Feijoada é um prato tradicional da culinária brasileira, preparado com feijão preto, carne de porco, linguiça, e acompanhado de arroz, farofa, couve refogada e laranja."
                                 value={descricaoDetalhada}
-                                onChange={(e) => setDescricaoDetalhada(e.target.value)} />
+                                onChange={(e) => setDescricaoDetalhada(e.target.value)} 
+                                style={{
+                                    backgroundColor: descricaoDetalhada?.length < 1 ? "#eeeded" : "#ffff" 
+                                }}
+                                />
                             <label htmlFor="valor">Descrição Detalhada</label>
                             <input
                                 type="text"
                                 id="valor"
                                 placeholder="R$ 50.00"
                                 value={valor}
-                                onChange={(e) => setValor(e.target.value)} />
+                                onChange={(e) => setValor(e.target.value)} 
+                                style={{
+                                    backgroundColor: valor?.length < 1 ? "#eeeded" : "#ffff"
+                                }}
+                                />
                         </div>
                     </div>
                     <div className="Layout-botao">
