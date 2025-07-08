@@ -54,16 +54,15 @@
     padding: 5px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    color: #1f1f1f;
+    color: #272727;
     /* background-color: #eeeded; */
-    font-size: 16px;
+    font-size: 17px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .Inputs input:focus {
     outline: none;
-    border: 1px solid #666666;
-    
+    border: 1px solid #428eff;
 }
 
 .Inputs label{
