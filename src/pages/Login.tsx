@@ -1,6 +1,10 @@
 import "../assets/styles/login.css";
 
 const Login = () => {
+
+  const logar = () => {
+    console.log("Logando")
+  }
   return (
     <>
       <div className="container-login">
@@ -15,7 +19,10 @@ const Login = () => {
             <h2>LOGIN</h2>
             <input id="email" type="text" placeholder="E-mail do usuário" />
             <input id="senha" type="text" placeholder="Senha" />
-            <button className="login-btn">Logar</button>
+            <button 
+            className="login-btn"
+            onClick={() => (logar())}
+            >Logar</button>
           </div>
         </div>
       </div>
