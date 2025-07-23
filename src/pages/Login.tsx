@@ -1,10 +1,34 @@
+import { useState } from "react";
 import "../assets/styles/login.css";
+import api from "../http/api";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-  const logar = () => {
-    console.log("Logando")
-  }
+  const navigate = useNavigate()
+
+  const logar = async () => {
+    try {
+      const res = await api.post("/login", {
+        email: email,
+        senha: senha,
+      });
+
+      const { token, refreshToken } = res.data;
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("refreshToken", refreshToken);
+      
+      navigate('/')
+
+    } catch (error: unknown) {
+      console.log("deu erro")
+    }
+  };
+
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
   return (
     <>
       <div className="container-login">
@@ -17,12 +41,23 @@ const Login = () => {
           </div>
           <div className="login-form">
             <h2>LOGIN</h2>
-            <input id="email" type="text" placeholder="E-mail do usuário" />
-            <input id="senha" type="text" placeholder="Senha" />
-            <button 
-            className="login-btn"
-            onClick={() => (logar())}
-            >Logar</button>
+            <input
+              id="email"
+              type="text"
+              placeholder="E-mail do usuário"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              id="senha"
+              type="text"
+              placeholder="Senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+            />
+            <button className="login-btn" onClick={() => logar()}>
+              Logar
+            </button>
           </div>
         </div>
       </div>
